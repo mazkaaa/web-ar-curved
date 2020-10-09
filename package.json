@@ -1,0 +1,22 @@
+{
+  "name": "web-ar-curved",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazkaaa/web-ar-curved.git"
+  },
+  "author": "mazkaaa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mazkaaa/web-ar-curved/issues"
+  },
+  "homepage": "https://github.com/mazkaaa/web-ar-curved#readme",
+  "devDependencies": {
+    "eslint": "^7.10.0"
+  }
+}

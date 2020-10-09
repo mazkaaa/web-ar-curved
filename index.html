@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>WebAR Botol Minum</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scaleable=no">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="//cdn.8thwall.com/web/aframe/8frame-1.0.4.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
+        <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+        <script src="//cdn.8thwall.com/web/aframe/aframe-extras-4.2.0.min.js"></script>
+        <script async src="https://apps.8thwall.com/xrweb?appKey=meYaO67Y80Gm2PFwYmCQ9V2amlr4S8S87PsqBgJuuLp5V1cVh1y7VPtQ4wPAhLClF5UaCh"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <a-scene 
+            xrextras-almost-there
+            xrextras-loading
+            xrextras-runtime-error
+            renderer="colorManagement: true; physicallyBasedRendering: true;"
+            xrweb="disableWorldTracking: true">
+            <a-assets>
+                <a-asset-item id="words-glb" src="./assets/purrfect-brew-jvq48rk.glb"></a-asset-item>
+                <video
+                    id="laut"
+                    crossorigin="anonymous"
+                    loop="true"
+                    src="./assets/laut.mp4">
+                </video>
+            </a-assets>
+            <a-camera
+                position="0 1 1"
+                raycaster="objects: .cantap"
+                cursor="fuse: false; rayOrigin: mouse;">
+            </a-camera>
+            <a-light type="directional" intensity="1.5" position="0 1 0"></a-light>
+            <a-light type="ambient" intensity="0.25"></a-light>
+            <xrextras-named-image-target name="logo-botol">
+                <xrextras-target-video-fade video="#laut"></xrextras-target-video-fade>
+                <a-entity gltf-model="#words-glb" position="0 -0.25 0" scale="0.2 0.2 0.2" xrextras-spin="speed: 5000; direction: reverse;"></a-entity>
+            </xrextras-named-image-target>
+            
+        </a-scene>
+        
+        <script src="js/bootstrap.min.js" async defer></script>
+    </body>
+</html>
